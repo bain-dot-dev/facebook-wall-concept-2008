@@ -26,7 +26,7 @@ export function ProfileSidebar({
         />
       </div>
 
-      <Card className="p-4 mb-4">
+      <Card className="p-4 mb-4 flex flex-col gap-2">
         <h2 className="font-bold text-lg">{name}</h2>
         <p className="text-sm text-gray-600">wall</p>
       </Card>
@@ -35,7 +35,7 @@ export function ProfileSidebar({
         <h3 className="font-semibold mb-2">Information</h3>
       </Card>
 
-      <Card className="p-4">
+      <Card className="p-4 flex flex-col gap-2 ">
         <h3 className="font-semibold mb-2">Networks</h3>
         {networks.map((network, index) => (
           <p key={index} className="text-sm text-gray-600">
