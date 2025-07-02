@@ -51,14 +51,14 @@ export function PostCreation({
   };
 
   return (
-    <Card className="p-4 mb-4">
+    <Card className="p-3 sm:p-4 mb-4">
       <div className="gap-2 flex flex-col">
         <Textarea
           placeholder="What's on your mind?"
           value={newPost}
           onChange={(e) => setNewPost(e.target.value)}
           maxLength={maxChars}
-          className="border-0 resize-none text-base p-0 focus-visible:ring-0"
+          className="border-0 resize-none text-sm sm:text-base p-0 focus-visible:ring-0"
           rows={3}
         />
 
@@ -76,7 +76,7 @@ export function PostCreation({
       </div>
 
       {/* Image Upload Area */}
-      <div className="p-4 border-2 border-dashed border-gray-200 rounded-lg">
+      <div className="p-3 sm:p-4 border-2 border-dashed border-gray-200 rounded-lg">
         {imagePreview ? (
           <div className="relative">
             <Image
@@ -89,19 +89,19 @@ export function PostCreation({
             <Button
               variant="outline"
               size="sm"
-              className="absolute top-2 right-2 bg-transparent"
+              className="absolute top-2 right-2 bg-white/90 backdrop-blur-sm"
               onClick={removeImage}
             >
               Remove
             </Button>
           </div>
         ) : (
-          <label className="cursor-pointer flex flex-col items-center justify-center py-4">
-            <ImageIcon className="w-8 h-8 text-gray-400 mb-2" />
-            <span className="text-sm text-gray-500">
+          <label className="cursor-pointer flex flex-col items-center justify-center py-3 sm:py-4">
+            <ImageIcon className="w-6 h-6 sm:w-8 sm:h-8 text-gray-400 mb-2" />
+            <span className="text-xs sm:text-sm text-gray-500 text-center">
               Click to add photo (optional)
             </span>
-            <span className="text-xs text-gray-400">
+            <span className="text-xs text-gray-400 text-center">
               JPG, PNG, GIF up to 5MB
             </span>
             <input
@@ -118,12 +118,13 @@ export function PostCreation({
         <Button
           onClick={handleSubmit}
           disabled={(!newPost.trim() && !selectedImage) || isLoading}
-          className="bg-[#3b5998] hover:bg-[#2d4373] transition-all duration-200 disabled:opacity-50"
+          className="bg-[#3b5998] hover:bg-[#2d4373] transition-all duration-200 disabled:opacity-50 text-sm sm:text-base px-4 sm:px-6"
         >
           {isLoading ? (
             <div className="flex items-center gap-2">
-              <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-              Sharing...
+              <div className="w-3 h-3 sm:w-4 sm:h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+              <span className="hidden sm:inline">Sharing...</span>
+              <span className="sm:hidden">...</span>
             </div>
           ) : (
             "Share"

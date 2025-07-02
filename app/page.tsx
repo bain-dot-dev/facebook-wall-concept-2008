@@ -95,22 +95,25 @@ export default function FacebookWall() {
   return (
     <div className="min-h-screen bg-white">
       {/* Facebook Header */}
-      <div className="bg-[#3b5998] text-white p-2">
+      <div className="bg-[#3b5998] text-white p-2 sticky top-0 z-10">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <div className="text-xl font-bold">WALL</div>
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto flex gap-4 p-4">
-        <ProfileSidebar
-          name={USER_NAME}
-          profileImageUrl={PROFILE_IMAGE_URL}
-          networks={USER_NETWORKS}
-          location={USER_LOCATION}
-        />
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-4 p-2 sm:p-4">
+        {/* Mobile: Profile at top, Tablet/Desktop: Left Sidebar */}
+        <div className="w-full md:w-48 lg:w-64 md:flex-shrink-0">
+          <ProfileSidebar
+            name={USER_NAME}
+            profileImageUrl={PROFILE_IMAGE_URL}
+            networks={USER_NETWORKS}
+            location={USER_LOCATION}
+          />
+        </div>
 
         {/* Main Content */}
-        <div className="flex-1">
+        <div className="flex-1 min-w-0">
           <PostCreation onSubmit={handlePostSubmit} isLoading={isLoading} />
 
           {error && (

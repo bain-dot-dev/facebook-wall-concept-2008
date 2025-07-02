@@ -62,25 +62,29 @@ export function PostsFeed({
   return (
     <>
       {/* Posts Feed Header with Refresh */}
-      <div className="flex items-center justify-between mb-4">
-        <h2 className="text-lg font-semibold text-gray-800">Recent Posts</h2>
-        <div className="flex items-center gap-3">
+      <div className="flex items-center justify-between mb-4 px-1">
+        <h2 className="text-base sm:text-lg font-semibold text-gray-800">
+          Recent Posts
+        </h2>
+        <div className="flex items-center gap-2 sm:gap-3">
           {/* Real-time Status Indicator */}
-          <div className="flex items-center gap-2 text-sm">
+          <div className="flex items-center gap-1 sm:gap-2 text-sm">
             <div className={`w-2 h-2 rounded-full ${getStatusColor()}`}></div>
-            <span className="text-xs text-gray-600">{getStatusText()}</span>
+            <span className="text-xs text-gray-600 hidden sm:inline">
+              {getStatusText()}
+            </span>
           </div>
           <Button
             variant="outline"
             size="sm"
             onClick={onRefresh}
             disabled={isLoading}
-            className="text-sm"
+            className="text-xs sm:text-sm px-2 sm:px-3"
           >
             {isLoading ? (
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1 sm:gap-2">
                 <div className="w-3 h-3 border-2 border-gray-400 border-t-transparent rounded-full animate-spin"></div>
-                Refreshing...
+                <span className="hidden sm:inline">Refreshing...</span>
               </div>
             ) : (
               "Refresh"
