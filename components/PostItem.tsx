@@ -38,9 +38,9 @@ export function PostItem({
               <Image
                 src={post.image_url}
                 alt="Post image"
-                width={400}
-                height={300}
-                className="rounded-lg max-w-full h-auto"
+                width={600}
+                height={400}
+                className="rounded-lg w-full h-auto max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl object-cover"
               />
             </div>
           )}

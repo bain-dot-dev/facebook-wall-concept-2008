@@ -102,14 +102,16 @@ export default function FacebookWall() {
       </div>
 
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-4 p-2 sm:p-4">
-        {/* Mobile: Profile at top, Tablet/Desktop: Left Sidebar */}
+        {/* Mobile: Profile at top, Tablet/Desktop: Fixed Left Sidebar */}
         <div className="w-full md:w-48 lg:w-64 md:flex-shrink-0">
-          <ProfileSidebar
-            name={USER_NAME}
-            profileImageUrl={PROFILE_IMAGE_URL}
-            networks={USER_NETWORKS}
-            location={USER_LOCATION}
-          />
+          <div className="md:sticky md:top-16 md:max-h-[calc(100vh-4rem)] md:overflow-y-auto">
+            <ProfileSidebar
+              name={USER_NAME}
+              profileImageUrl={PROFILE_IMAGE_URL}
+              networks={USER_NETWORKS}
+              location={USER_LOCATION}
+            />
+          </div>
         </div>
 
         {/* Main Content */}
