@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+// import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Image from "next/image";
 import { Post } from "@/lib/supabase";
 
@@ -11,16 +11,16 @@ interface PostItemProps {
 
 export function PostItem({
   post,
-  profileImageUrl,
+  // profileImageUrl,
   formatTimeAgo,
 }: PostItemProps) {
   return (
     <Card className="p-3 sm:p-4 transition-all duration-300 hover:shadow-md animate-in slide-in-from-top-2">
       <div className="flex items-start gap-2 sm:gap-3">
-        <Avatar className="w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0">
+        {/* <Avatar className="w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0">
           <AvatarImage src={profileImageUrl} />
           <AvatarFallback className="text-xs sm:text-sm">BH</AvatarFallback>
-        </Avatar>
+        </Avatar> */}
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 mb-1">
             <span className="font-semibold text-xs sm:text-sm truncate">
